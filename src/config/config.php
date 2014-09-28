@@ -10,7 +10,7 @@ return [
     | This will be used when there are more titles to concatenate with.
     |
     */
-    'page_name' => 'WDMsh',
+    'page_name' => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ return [
     | Mainly used for the home page of your website.
     |
     */
-    'default_title_when_empty' => 'WDMsh',
+    'default_title_when_empty' => '',
 
     /*
     |--------------------------------------------------------------------------
