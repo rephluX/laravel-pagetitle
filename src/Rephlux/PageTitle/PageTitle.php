@@ -81,7 +81,7 @@ class PageTitle implements Countable
     /**
      * Get the page title
      *
-     * @param  bool|string $direction
+     * @param bool|string $direction
      * @return string
      */
     public function get($direction = 'regular')
