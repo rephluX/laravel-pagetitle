@@ -33,6 +33,13 @@ class PageTitle implements Countable
     private $default;
 
     /**
+     * The generated title
+     *
+     * @var string
+     */
+    private $title;
+
+    /**
      * @param string $delimeter
      * @param string $page_name
      * @param string $default
@@ -79,6 +86,10 @@ class PageTitle implements Countable
      */
     public function get($direction = 'regular')
     {
+        if (strlen($this->title)) {
+            return $this->title;
+        }
+
         if ($this->count() == 0) {
             return $this->default;
         }
@@ -87,9 +98,13 @@ class PageTitle implements Countable
             $this->add($this->page_name);
         }
 
-        return implode(
+        $combined = implode(
             $this->delimeter,
             $direction === 'reverse' ? array_reverse($this->collection) : $this->collection
         );
+
+        $this->title = $combined;
+
+        return $this->title;
     }
 }
