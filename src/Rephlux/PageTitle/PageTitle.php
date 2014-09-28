@@ -83,13 +83,23 @@ class PageTitle implements Countable
             return $this->default;
         }
 
-        if (isset($this->page_name)) {
-            $this->add($this->page_name);
-        }
+        $this->addPageName();
 
         return implode(
             $this->delimeter,
             $direction === 'reverse' ? array_reverse($this->collection) : $this->collection
         );
+
+    }
+
+    /**
+     * Add the page name to the collection
+     *
+     */
+    protected function addPageName()
+    {
+        if (isset($this->page_name) && !in_array($this->page_name, $this->collection)) {
+            $this->add($this->page_name);
+        }
     }
 }

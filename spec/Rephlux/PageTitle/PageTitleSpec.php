@@ -54,6 +54,14 @@ class PageTitleSpec extends ObjectBehavior
         $this->get()->shouldReturn('Page Title 1 | Page Title 2 | My Homepage');
     }
 
+    function it_displays_the_page_title_once_when_called_multiple_times()
+    {
+        $this->add('Page Title');
+
+        $this->get();
+        $this->get()->shouldReturn('Page Title | My Homepage');
+    }
+
     function it_displays_page_title_in_reverse_order()
     {
         $this->add(['Page Title 1', 'Page Title 2']);
