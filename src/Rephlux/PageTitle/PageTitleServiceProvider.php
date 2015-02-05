@@ -1,7 +1,5 @@
 <?php namespace Rephlux\PageTitle;
 
-use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 
 class PageTitleServiceProvider extends ServiceProvider {
@@ -21,32 +19,31 @@ class PageTitleServiceProvider extends ServiceProvider {
 	public function register()
 	{
         $this->app->bind('PageTitle', function($app) {
-            $delimeter = Config::get('pagetitle::config.delimiter');
-            $page_name = Config::get('pagetitle::config.page_name');
-            $default   = Config::get('pagetitle::config.default_title_when_empty');
+            $delimeter = config('pagetitle.delimiter');
+            $page_name = config('pagetitle.page_name');
+            $default   = config('pagetitle.default_title_when_empty');
 
             return new PageTitle($delimeter, $page_name, $default);
         });
 	}
 
+    /**
+     *
+     */
     public function boot()
     {
-        $this->package('rephlux/pagetitle');
-
-        AliasLoader::getInstance()->alias(
-            'PageTitle',
-            'Rephlux\PageTitle\Facades\PageTitle'
-        );
+        $configPath = __DIR__ . '/../../config/config.php';
+        $this->publishes([$configPath => config_path('pagetitle.php')], 'config');
     }
 
     /**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
+    * Get the services provided by the provider.
+    *
+    * @return array
+    */
+    public function provides()
+    {
         return ['PageTitle'];
-	}
+    }
 
 }
