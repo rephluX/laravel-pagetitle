@@ -18,7 +18,7 @@ class PageTitleServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-        $this->app->bind('PageTitle', function($app) {
+        $this->app->singleton('PageTitle', function($app) {
             $delimeter = config('pagetitle.delimiter');
             $page_name = config('pagetitle.page_name');
             $default   = config('pagetitle.default_title_when_empty');
