@@ -1,6 +1,6 @@
 {
     "name": "rephlux/pagetitle",
-    "description": "Manage page title",
+    "description": "Manage page title in Laravel views",
     "license": "MIT",
     "authors": [
         {
@@ -18,7 +18,10 @@
     "autoload": {
         "psr-0": {
             "Rephlux\\PageTitle": "src/"
-        }
+        },
+        "files": [
+            "src/Rephlux/PageTitle/functions.php"
+        ]
     },
     "minimum-stability": "stable"
 }
