@@ -82,14 +82,18 @@ class PageTitle implements Countable
         if ($this->count() == 0) {
             return $this->default;
         }
-
+        
+        if ($direction === 'downward') {
+            $this->collection = array_reverse($this->collection);
+        }
+        
         $this->addPageName();
+        
+        if ($direction === 'reverse') {
+            $this->collection = array_reverse($this->collection);
+        }
 
-        return implode(
-            $this->delimeter,
-            $direction === 'reverse' ? array_reverse($this->collection) : $this->collection
-        );
-
+        return implode($this->delimeter, $this->collection);
     }
 
     /**
