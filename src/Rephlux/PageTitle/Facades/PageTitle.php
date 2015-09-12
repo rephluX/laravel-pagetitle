@@ -1,9 +1,11 @@
-<?php namespace Rephlux\PageTitle\Facades;
+<?php
+
+namespace Rephlux\PageTitle\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class PageTitle extends Facade {
-
+class PageTitle extends Facade
+{
     /**
      * Name of the binding in the IoC container
      *
@@ -13,5 +15,4 @@ class PageTitle extends Facade {
     {
         return 'PageTitle';
     }
-
 } 

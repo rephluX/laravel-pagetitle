@@ -1,7 +1,6 @@
 <?php
 
-if (!function_exists('pagetitle'))
-{
+if (!function_exists('pagetitle')) {
     /**
      * PageTitle helper method.
      *
@@ -12,8 +11,7 @@ if (!function_exists('pagetitle'))
     {
         $pagetitle = app('PageTitle');
 
-        if (!is_null($title))
-        {
+        if (!is_null($title)) {
             $pagetitle->add($title);
         }
 

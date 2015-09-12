@@ -1,4 +1,6 @@
-<?php namespace Rephlux\PageTitle;
+<?php
+
+namespace Rephlux\PageTitle;
 
 use Countable;
 
@@ -55,9 +57,11 @@ class PageTitle implements Countable
         if (is_array($item)) {
             return array_map([$this, 'add'], $item);
         }
+
         if (!$item | strlen(trim($item)) === 0) {
             return false;
         }
+
         $this->collection[] = trim(strip_tags($item));
     }
 
@@ -83,13 +87,17 @@ class PageTitle implements Countable
             return $this->default;
         }
 
+        if ($direction === 'downward') {
+            $this->collection = array_reverse($this->collection);
+        }
+
         $this->addPageName();
 
-        return implode(
-            $this->delimeter,
-            $direction === 'reverse' ? array_reverse($this->collection) : $this->collection
-        );
+        if ($direction === 'reverse') {
+            $this->collection = array_reverse($this->collection);
+        }
 
+        return implode($this->delimeter, $this->collection);
     }
 
     /**

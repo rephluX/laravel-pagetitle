@@ -1,4 +1,4 @@
-# Manage your Page Title
+# Manage the Page Title in Blade views
 
 [![Build Status](https://travis-ci.org/rephluX/laravel-pagetitle.svg?branch=master)](https://travis-ci.org/rephluX/laravel-pagetitle)
 [![Latest Stable Version](https://poser.pugx.org/rephlux/pagetitle/v/stable.svg)](https://packagist.org/packages/rephlux/pagetitle)
@@ -17,66 +17,97 @@ Begin by installing this package through Composer.
 ```js
 {
     "require": {
-		"rephlux/pagetitle": "0.1.*"
-	}
+        "rephlux/pagetitle": "0.6.*"
+    }
 }
 ```
 
 ### Laravel Users
 
-If you are a Laravel user, then there is a service provider that you can make use of to automatically prepare the bindings and such.
+If you are a Laravel user, then there is a service provider that need to add to your `config/app.php` file.
 
 ```php
-
-// app/config/app.php
-
 'providers' => [
     '...',
     'Rephlux\PageTitle\PageTitleServiceProvider'
 ];
 ```
 
-When this provider is booted, you'll have a nice little `PageTitle` facade, which you may use in your controllers and views.
-
+This package also provides a facade, which you may also register in your `config/app.php` as well if you want to use the facade in your controllers and views:
+ 
+```php
+ 'aliases' => [
+     '...'
+     'PageTitle' => 'Rephlux\PageTitle\Facades\PageTitle',
+ ]
+```
+  
+## Useage 
+ 
+ To simple add a single page title, call the appropiate `add()` method with passing a string as a parameter:
+ 
 ```php
 public function index()
 {
-    PageTitle::add('Hello there');
+    \PageTitle::add('Welcome to our Homepage');
 
-    return View::make('hello');
+    return view('hello');
 }
 ```
 
-To add multiple page title parts at once just pass an array as parameter.
+You can also make use of the global `pagetitle` function.
 
 ```php
 public function index()
 {
-    PageTitle::add([
-        'Hello there',
+    pagetitle('Welcome to our Homepage');
+
+    return view('hello');
+}
+```
+
+To add multiple page title parts at once just pass an array as a parameter.
+
+```php
+public function index()
+{
+    pagetitle([
+        'About us',
         'Profile'
     ]);
 
-    return View::make('hello');
+    return view('hello');
 }
 ```
+
+### Add the pagetitle to a blade view
 
 Now you can display the fully concatenated page title in your view. The best way is to use it in your master layout file.
 
 ```html
 <head>
     <meta charset="UTF-8">
-    <title>{{ PageTitle:get() }}</title>
+    <title>{{ pagetitle->get() }}</title>
     ...
 </head>
 ```
 
-To display the fully concatenated page title in reverse order just pass an appropriate parameter.
+To display the fully concatenated page title in reverse order just pass the `reverse` parameter.
 
 ```html
 <head>
     <meta charset="UTF-8">
-    <title>{{ PageTitle:get('reverse') }}</title>
+    <title>{{ pagetitle->get(('reverse') }}</title>
+    ...
+</head>
+```
+
+The `downward` mode first concatenates all page title parts in reverse order and then appends the page name ( _if set in options_ )
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <title>{{ pagetitle->get(('reverse') }}</title>
     ...
 </head>
 ```
@@ -89,7 +120,7 @@ If using Laravel, there are three configuration options that you'll need to worr
 php artisan config:publish rephlux/pagetitle
 ```
 
-This will add a new configuration file to: `app/config/packages/rephlux/pagetitle`.
+This will add a new configuration file to: `config/pagetitle`.
 
 ```php
 
@@ -147,4 +178,4 @@ When you want to use a delimeter just update this key and add the string you wan
 
 ## License
 
-[View the license](https://github.com/laracasts/PHP-Vars-To-Js-Transformer/blob/master/LICENSE) for this repo.
+[View the license](https://github.com/rephluX/laravel-pagetitle/blob/master/LICENSE) for this repo.

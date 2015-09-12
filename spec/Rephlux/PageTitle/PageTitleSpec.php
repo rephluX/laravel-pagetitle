@@ -68,4 +68,11 @@ class PageTitleSpec extends ObjectBehavior
 
         $this->get('reverse')->shouldReturn('My Homepage | Page Title 2 | Page Title 1');
     }
+
+    function it_displays_page_title_in_downward_order()
+    {
+        $this->add(['Page Title 1', 'Page Title 2']);
+
+        $this->get('downward')->shouldReturn('Page Title 2 | Page Title 1 | My Homepage');
+    }
 }
