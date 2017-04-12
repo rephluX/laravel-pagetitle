@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/rephluX/laravel-pagetitle.svg?branch=master)](https://travis-ci.org/rephluX/laravel-pagetitle)
 [![Latest Stable Version](https://poser.pugx.org/rephlux/pagetitle/v/stable.svg)](https://packagist.org/packages/rephlux/pagetitle)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rephluX/laravel-pagetitle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rephluX/laravel-pagetitle/?branch=master)
 [![License](https://poser.pugx.org/rephlux/pagetitle/license.svg)](https://packagist.org/packages/rephlux/pagetitle)
 
 Often, you'll find yourself in situations, where you want to have more to control how to set a page title for your
@@ -170,7 +171,6 @@ This text will be used when there is are no page title parts in the collection.
 #### delimiter
 
 When you want to use a delimeter just update this key and add the string you want to use as an delimeter.
-
 
 ## License
 

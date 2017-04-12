@@ -1,6 +1,7 @@
 {
     "name": "rephlux/pagetitle",
     "description": "Manage page title in Laravel views",
+    "homepage": "https://github.com/rephluX/laravel-pagetitle",
     "license": "MIT",
     "authors": [
         {
@@ -10,10 +11,10 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "~5.0"
+        "illuminate/support": "~5.0.0|~5.1.0|~5.2.0|~5.3.0|~5.4.0"
     },
     "require-dev": {
-        "phpspec/phpspec": "~2.0.0"
+        "phpunit/phpunit": "~5.7"
     },
     "autoload": {
         "psr-0": {
