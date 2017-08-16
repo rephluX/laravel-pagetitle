@@ -1,7 +1,15 @@
 <?php
 
+namespace Rephlux\PageTitle\Test;
+
+use PHPUnit_Framework_TestCase;
 use Rephlux\PageTitle\PageTitle;
 
+/**
+ * Class PageTitleTest.
+ *
+ * @author Chris van Daele <engine_no9@gmx.net>
+ */
 class PageTitleTest extends PHPUnit_Framework_TestCase
 {
     /**
@@ -17,6 +25,42 @@ class PageTitleTest extends PHPUnit_Framework_TestCase
         parent::setUp();
 
         $this->pageTitle = new PageTitle(' | ', 'My Homepage', 'Welcome on my Homepage');
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_change_the_delimeter()
+    {
+        $this->assertEquals(' | ', $this->pageTitle->getDelimeter());
+
+        $this->pageTitle->setDelimeter(' - ');
+
+        $this->assertEquals(' - ', $this->pageTitle->getDelimeter());
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_change_the_page_name()
+    {
+        $this->assertEquals('My Homepage', $this->pageTitle->getPageName());
+
+        $this->pageTitle->setPageName('My Blog');
+
+        $this->assertEquals('My Blog', $this->pageTitle->getPageName());
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_change_the_default_title()
+    {
+        $this->assertEquals('Welcome on my Homepage', $this->pageTitle->getDefault());
+
+        $this->pageTitle->setDefault('Welcome on my blog');
+
+        $this->assertEquals('Welcome on my blog', $this->pageTitle->getDefault());
     }
 
     /** @test */
@@ -46,13 +90,13 @@ class PageTitleTest extends PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function it_displays_the_default_page_title_when_no_page_title_parts_are_set()
+    public function it_displays_the_default_page_title_when_no_page_title_parts_are_set()
     {
         $this->assertEquals('Welcome on my Homepage', $this->pageTitle->get());
     }
 
     /** @test */
-    function it_displays_the_page_title_once_when_called_multiple_times()
+    public function it_displays_the_page_title_once_when_called_multiple_times()
     {
         $this->pageTitle->add('Page Title');
 
@@ -61,7 +105,7 @@ class PageTitleTest extends PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function it_displays_page_title_in_reverse_order()
+    public function it_displays_page_title_in_reverse_order()
     {
         $this->pageTitle->add(['Page Title 1', 'Page Title 2']);
 
@@ -69,7 +113,7 @@ class PageTitleTest extends PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function it_displays_page_title_in_downward_order()
+    public function it_displays_page_title_in_downward_order()
     {
         $this->pageTitle->add(['Page Title 1', 'Page Title 2']);
 

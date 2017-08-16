@@ -31,18 +31,18 @@ If you are a Laravel user, then there is a service provider that need to add to 
 ```
 
 This package also provides a facade, which you may also register in your `config/app.php` as well if you want to use the facade in your controllers and views:
- 
+
 ```php
  'aliases' => [
      '...'
      'PageTitle' => Rephlux\PageTitle\Facades\PageTitle::class,
  ]
 ```
-  
-## Useage 
- 
+
+## Useage
+
  To simple add a single page title, call the appropiate `add()` method with passing a string as a parameter:
- 
+
 ```php
 public function index()
 {
@@ -120,7 +120,6 @@ php artisan vendor:publish --provider="Rephlux\PageTitle\PageTitleServiceProvide
 This will add a new configuration file to: `config/pagetitle.php`.
 
 ```php
-
 <?php
 
 return [
@@ -155,8 +154,7 @@ return [
     | Titles will be concatenated using this delimiter.
     |
     */
-    'delimiter' => ' :: '
-
+    'delimiter' => ' :: ',
 ];
 ```
 
@@ -171,6 +169,31 @@ This text will be used when there is are no page title parts in the collection.
 #### delimiter
 
 When you want to use a delimeter just update this key and add the string you want to use as an delimeter.
+
+## Change the configuration values
+
+Each of the configuration parameters can be changed on the page title object instance with the correspondig setter methods:
+
+* setDelimeter(delimeter)
+* setPageName(pageName)
+* setDefault(default)
+
+Example usage:
+
+```php
+public function index()
+{
+    pagetitle('My Blog Post')->setPageName('My Blog')->setDelimeter(' / ');
+
+    return view('hello');
+}
+```
+
+To retrieve the current configuration values use the corresponding getter methods on the page title object instance:
+
+* getDelimeter()
+* getPageName()
+* getDefault()
 
 ## License
 

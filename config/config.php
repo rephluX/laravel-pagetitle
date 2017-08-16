@@ -1,6 +1,6 @@
 <?php
-return [
 
+return [
     /*
     |--------------------------------------------------------------------------
     | Page name
@@ -31,6 +31,5 @@ return [
     | Titles will be concatenated using this delimiter.
     |
     */
-    'delimiter' => ' :: '
-
+    'delimiter' => ' :: ',
 ];
