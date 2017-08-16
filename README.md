@@ -84,7 +84,7 @@ Now you can display the fully concatenated page title in your view. The best way
 ```html
 <head>
     <meta charset="UTF-8">
-    <title>{{ pagetitle->get() }}</title>
+    <title>{{ pagetitle()->get() }}</title>
     ...
 </head>
 ```
@@ -94,7 +94,7 @@ To display the fully concatenated page title in reverse order just pass the `rev
 ```html
 <head>
     <meta charset="UTF-8">
-    <title>{{ pagetitle->get(('reverse') }}</title>
+    <title>{{ pagetitle()->get('reverse') }}</title>
     ...
 </head>
 ```
@@ -104,7 +104,7 @@ The `downward` mode first concatenates all page title parts in reverse order and
 ```html
 <head>
     <meta charset="UTF-8">
-    <title>{{ pagetitle->get(('downward') }}</title>
+    <title>{{ pagetitle()->get('downward') }}</title>
     ...
 </head>
 ```
