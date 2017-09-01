@@ -38,6 +38,7 @@ This package also provides a facade, which you may also register in your `config
      'PageTitle' => Rephlux\PageTitle\Facades\PageTitle::class,
  ]
 ```
+> In Laravel 5.5, [service providers and aliases are automatically registered](https://laravel.com/docs/5.5/packages#package-discovery). If you're using Laravel 5.5, you can skip these steps.
 
 ## Useage
 
