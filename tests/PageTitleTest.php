@@ -2,7 +2,7 @@
 
 namespace Rephlux\PageTitle\Test;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Rephlux\PageTitle\PageTitle;
 
 /**
@@ -10,7 +10,7 @@ use Rephlux\PageTitle\PageTitle;
  *
  * @author Chris van Daele <engine_no9@gmx.net>
  */
-class PageTitleTest extends PHPUnit_Framework_TestCase
+class PageTitleTest extends TestCase
 {
     /**
      * @var PageTitle
