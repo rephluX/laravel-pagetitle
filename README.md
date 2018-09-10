@@ -40,6 +40,12 @@ This package also provides a facade, which you may also register in your `config
 ```
 > In Laravel 5.5, [service providers and aliases are automatically registered](https://laravel.com/docs/5.5/packages#package-discovery). If you're using Laravel 5.5, you can skip these steps.
 
+## Version 2.0
+
+If you still use PHP 7.0 or 5.6 you need to use version 1.0 of this package. Version 2.0 and above is only compatible with PHP 7.1 or newer.
+
+Version 2.0 of this package is also compatible with Laravel 5.5 and newer.
+
 ## Useage
 
  To simple add a single page title, call the appropiate `add()` method with passing a string as a parameter:
