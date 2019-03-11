@@ -19,8 +19,10 @@ class PageTitleTest extends TestCase
 
     /**
      * Setup the testcase.
+     *
+     * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
