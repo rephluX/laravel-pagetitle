@@ -8,12 +8,18 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
+         stopOnError="false"
          stopOnFailure="false">
     <testsuites>
         <testsuite name="Package Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </coverage>
     <filter>
         <whitelist>
             <directory suffix=".php">src</directory>
