@@ -7,7 +7,7 @@
 
 Often, you'll find yourself in situations, where you want to have more to control how to set a page title for your
 different views. Although it is possible to yield your page title in a master view it can be a hassle to deal with
-the format like a delimeter usage or to append/prepend a default page title.
+the format like a delimiter usage or to append/prepend a default page title.
 
 This package simplifies the process.
 
@@ -42,13 +42,15 @@ This package also provides a facade, which you may also register in your `config
 
 ## Version 2.0
 
-If you still use PHP 7.0 or 5.6 you need to use version 1.0 of this package. Version 2.0 and above is only compatible with PHP 7.1 or newer.
+If you still use PHP 7.0 or 5.6 you need to use version 1.0 of this package. Version 2.0 and above is only compatible with PHP 7.1 or newer. Version 3.0 and above is only compatible with PHP 7.4 or newer.
 
 Version 2.0 of this package is also compatible with Laravel 5.5 and newer.
 
-## Useage
+Version 3.0 of this package is also compatible with Laravel 6.0 and newer.
 
- To simple add a single page title, call the appropiate `add()` method with passing a string as a parameter:
+## Usage
+
+To add a single page title, call the appropriate `add()` method with passing a string as a parameter:
 
 ```php
 public function index()
@@ -147,7 +149,7 @@ return [
     | Default title when empty
     |--------------------------------------------------------------------------
     |
-    | This will be used when therer is no other title.
+    | This will be used when there is no other title.
     | Mainly used for the home page of your website.
     |
     */
@@ -175,11 +177,11 @@ This text will be used when there is are no page title parts in the collection.
 
 #### delimiter
 
-When you want to use a delimeter just update this key and add the string you want to use as an delimeter.
+When you want to use a delimiter just update this key and add the string you want to use as a delimiter.
 
 ## Change the configuration values
 
-Each of the configuration parameters can be changed on the page title object instance with the correspondig setter methods:
+Each of the configuration parameters can be changed on the page title object instance with the corresponding setter methods:
 
 * setDelimeter(delimeter)
 * setPageName(pageName)
