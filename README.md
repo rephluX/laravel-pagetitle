@@ -42,11 +42,13 @@ This package also provides a facade, which you may also register in your `config
 
 ## Version 2.0
 
-If you still use PHP 7.0 or 5.6 you need to use version 1.0 of this package. Version 2.0 and above is only compatible with PHP 7.1 or newer. Version 3.0 and above is only compatible with PHP 7.4 or newer.
+If you still use PHP 7.0 or 5.6 you need to use version 1.0 of this package. Version 2.0 and above is only compatible with PHP 7.1 or newer. Version 3.0 and above is only compatible with PHP 7.4 or newer. Version 4.0 and above is only compatible with PHP 8.0 or newer.
 
 Version 2.0 of this package is also compatible with Laravel 5.5 and newer.
 
 Version 3.0 of this package is also compatible with Laravel 6.0 and newer.
+
+Version 4.0 of this package is also compatible with Laravel 9.0 and newer.
 
 ## Usage
 
